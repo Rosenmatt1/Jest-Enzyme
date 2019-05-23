@@ -7,4 +7,5 @@ Enzyme.configure({ adapter: new EnzymeAdapter() })
 
 test('renders without crashing', () => {
  const wrapper = shallow( <App /> )
+ console.log(wrapper.debug())
 });
