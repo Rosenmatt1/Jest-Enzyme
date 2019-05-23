@@ -10,3 +10,7 @@ test('renders without crashing', () => {
 //  console.log(wrapper.debug())
 expect(wrapper).toBeTruthy()
 })
+
+test('renders increment button', () => {
+ 
+})
