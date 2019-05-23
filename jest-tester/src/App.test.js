@@ -14,3 +14,15 @@ expect(wrapper).toBeTruthy()
 test('renders increment button', () => {
  
 })
+
+test('renders counter display', () => {
+
+})
+
+test('counter starts at 0', () => {
+
+})
+
+test('clicking button increments counter display', () => {
+
+})
