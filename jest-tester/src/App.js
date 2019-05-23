@@ -10,7 +10,11 @@ class App extends Component {
     }
   }
 
-  
+  incrementor = () => {
+    this.setState({
+      counter: this.state.counter + 1
+    })
+  }
 
   render() {
     return (
