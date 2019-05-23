@@ -6,7 +6,8 @@ class App extends Component {
     super(props)
 
     this.state = {
-      counter: 0
+      counter: 0,
+      belowZero: false
     }
   }
 
@@ -16,10 +17,20 @@ class App extends Component {
     })
   }
 
+  negative = () => {
+    if (this.state.counter <= 0) {
+      this.setState({
+        counter: 0,
+        belowZero: true
+      })
+    }
+  }
+
   decrementor = () => {
     this.setState({
       counter: this.state.counter - 1
     })
+    this.negative()
   }
 
   render() {
@@ -28,6 +39,11 @@ class App extends Component {
         <h1 data-test="counter-display"> The counter is currently {this.state.counter} </h1>
         <button onClick={ () => this.incrementor() } data-test="increment-button"> Incrementor</button>
         <button onClick={() => this.decrementor()} data-test="decrement-button"> Decrementor</button>
+        {this.state.belowZero
+        ? <h5> Can not go below Zero </h5>
+        : <div></div>
+        }
+
       </div>
 
     )
