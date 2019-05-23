@@ -15,6 +15,16 @@ class App extends Component {
     this.setState({
       counter: this.state.counter + 1
     })
+    this.positive();
+  }
+
+  positive = () => {
+    if (this.state.counter === 0) {
+      this.setState({
+        counter: 0,
+        belowZero: false
+      })
+    }
   }
 
   negative = () => {
