@@ -20,7 +20,7 @@ const setup = (props={}, state=null) => {
  * Return ShallowWrapper containing node(s) w/ the given data-test value.
  * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
  * @param {string} val - Value of data-test attribute for search.
- * @returns {Shallow Wrapper}
+ * @returns {ShallowWrapper}
  */
 const findByTestAttr = (wrapper, val) => {
   return wrapper.find(`[data-test="${val}"]`)
@@ -47,7 +47,9 @@ test('renders counter display', () => {
 })
 
 test('counter starts at 0', () => {
-
+  const wrapper = setup();
+  initialCounterState = wrapper.state('counter')
+  expect(initialCounterState).toBe(0)
 })
 
 test('clicking button increments counter display', () => {
